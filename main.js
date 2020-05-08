@@ -1305,14 +1305,14 @@ const cars = [
 
 // Total profit for 2017
 const firstCar = cars[0].purchase_date.substring(0, 4)
-
+let total = 0;
 const carsSoldIn2017 = cars.filter(car => car.purchase_date.substring(0, 4) === '2017');
-let total = carsSoldIn2017.reduce((x, y) => x + y, 0)
-console.log(total);
-
-console.log(carsSoldIn2017)
+for (let car of carsSoldIn2017) {
+  total += car.gross_profit;
+}
 
 // In which month did they sell the most cars?
+
 // Which salesperson sold the most cars?
 // Which salesperson made the most profit?
 // Which model was the most popular?
